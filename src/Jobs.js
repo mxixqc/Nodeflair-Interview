@@ -1,6 +1,7 @@
 import duck from "./assets/duck.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import TechStackPill from "./TechStackPill";
 
 export default function Jobs(){
     return(
@@ -27,7 +28,7 @@ export default function Jobs(){
                     
                 </div>
                 
-                <div className="jobTimeLocation"> 
+                <div className="jobListingDetails"> 
                     <div className="jobRecencyInformation">
                         <span style={{color: "#1fc76a", fontWeight:"bold"}}>
                             about 1 hour ago
@@ -38,10 +39,39 @@ export default function Jobs(){
                         &nbsp;Singapore
                         </span>
                     </div>  
+                    <div>
+                        <p className="jobSalary">
+                            S$4,633 - S$7,166 / mth &nbsp;
+                        
+                            <TechStackPill tech="EST" isBlack={true}/>
+
+                        </p>
+
+                    </div>
                 </div>
             </div>
-            <div>
-                Hello
+            <div className="techStackPillContainer">
+                <TechStackPill tech="Python"/>
+                &nbsp;
+                <TechStackPill tech="Python"/>
+                &nbsp;
+
+                <TechStackPill tech="Python"/>
+                &nbsp;
+
+                <TechStackPill tech="Python"/>
+                &nbsp;
+
+                <TechStackPill tech="Python"/>
+                &nbsp;
+                <TechStackPill tech="Python"/>
+                &nbsp;
+
+                <TechStackPill tech="Python"/>
+                &nbsp;
+
+
+
             </div>
         </div>
     )
