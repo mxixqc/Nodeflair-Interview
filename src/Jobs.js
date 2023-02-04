@@ -4,15 +4,7 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import TechStackPill from "./TechStackPill";
 
 export default function Jobs(props){
-
-    function generateSalaryRange() {
-        const firstNum = Math.floor(Math.random() * 100000 + 10000);
-        const secondNum = Math.floor(Math.random() * (firstNum - 10000) + 10000);
-        return `S$${secondNum.toLocaleString()} - S$${firstNum.toLocaleString()}`;
-      }
       
-
-
     return(
         <div className={`jobEntry ${props.currSelected === props.id ? "jobEntryClicked": ""}`}  onClick={()=>{
             props.handleClick(props.id)
@@ -42,18 +34,18 @@ export default function Jobs(props){
                 <div className="jobListingDetails"> 
                     <div className="jobRecencyInformation">
                         <span style={{color: "#1fc76a", fontWeight:"bold"}}>
-                            about 1 hour ago
+                            about {props.hours} hours ago
                             &nbsp;
                         </span>
                         <span>
                         <FontAwesomeIcon icon={faLocationDot} color="#838383" width="10.5" height="14" />
-                        &nbsp;Singapore
+                        &nbsp;{props.location}
                         </span>
                     </div>  
-                    <div className={ props.availSalary ? "" : "noDisplay"}>
+                    <div className={ props.salary === "" ? "noDisplay" : ""}>
                         <p className={`jobSalary`}>
                             
-                            {generateSalaryRange()} / mth &nbsp;
+                            {props.salary} / mth &nbsp;
                         
                             <TechStackPill tech="EST" isBlack={true}/>
 
@@ -63,24 +55,13 @@ export default function Jobs(props){
                 </div>
             </div>
             <div className="techStackPillContainer">
-                <TechStackPill tech="Python"/>
-                &nbsp;
-                <TechStackPill tech="Python"/>
-                &nbsp;
-
-                <TechStackPill tech="Python"/>
-                &nbsp;
-
-                <TechStackPill tech="Python"/>
-                &nbsp;
-
-                <TechStackPill tech="Python"/>
-                &nbsp;
-                <TechStackPill tech="Python"/>
-                &nbsp;
-
-                <TechStackPill tech="Python"/>
-                &nbsp;
+                {
+                    props.skills.map((tech, index) => {
+                        return (
+                            <TechStackPill tech={tech} key={index}/>
+                        )
+                    })
+                }
 
 
 

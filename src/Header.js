@@ -5,17 +5,17 @@ function Header(){
     
     return(
         <div className="header">
-            <div className="header-container">
+            <div className="headerContainer">
 
-                    <span className="navbar-icon">
+                    <span className="navbarIcon">
                         <a href="/">
                             <img alt="nodeflair logo" src={logo}></img>
                         </a>
                     </span>
-                    <LargeOptions className={`show-when-big`} names={["Companies", "Jobs", "Salaries", "Reviews", "Blog"]} />
-                    <LargeOptions className={`show-when-big floatRight `} names={["Sign In"]} />
+                    <LargeOptions className="showWhenBig" names={["Companies", "Jobs", "Salaries", "Reviews", "Blog"]} />
+                    <LargeOptions className="showWhenBig floatRight" names={["Sign In"]} />
             
-                    <span className={`hamburger-icon floatRight`}>
+                    <span className={`hamburgerIcon floatRight`}>
                         &#9776;
                     </span>
 
