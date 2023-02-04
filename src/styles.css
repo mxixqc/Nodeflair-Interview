@@ -28,11 +28,11 @@
     /* display: flex; */
 }
 
-.navbar-icon {
-    display: inline-flex;
-    width: 180px;
-    padding: 10px 16px;
-    margin: 2px auto;
+.navbar-icon{
+    width:120px;
+    padding:10px 16px;
+    float:left;
+    margin:2px auto
 }
 
 .navbar-icon img {
@@ -42,6 +42,27 @@
 
 .show-when-big{
     display: inline-flex;
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and (min-width: 1010px){
+    .hamburger-icon{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1009px){
+    .show-when-big{
+        display: none;
+    }
+    .hamburger-icon{
+        display: visible;
+        padding-top: 15px;
+        padding-right: 15px;
+    }
 }
 
 .option {
