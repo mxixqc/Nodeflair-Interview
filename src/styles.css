@@ -9,6 +9,14 @@
     align-items: center;
     justify-content: center;
     position: sticky;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: white;  
+    display: flex;
+    align-items: center;
+    z-index: 1;
+
 }
 
 .header-container {
@@ -59,6 +67,10 @@
 .request {
     background-color: #DDF7E9;
     font-weight: bold;
+}
+
+.noDisplay{
+    display: none;
 }
 
 .nostyle {
@@ -191,6 +203,7 @@
     align-self: flex-start;
     height: auto;
     background-color: beige;
+    margin-top: 20px;
 }
 
 .jobEntry{
@@ -282,10 +295,20 @@
     height: 1em;
 }
 
+.floater{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 61px;
+    background-color: white;  
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+/* 
 .scrollable{
     height: 100%;
     overflow-y: auto;
-}
+} */
 
 .jobSalary{
     display: block; 

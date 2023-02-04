@@ -5,7 +5,12 @@ import TechStackPill from "./TechStackPill";
 
 export default function Jobs(props){
 
-
+    function generateSalaryRange() {
+        const firstNum = Math.floor(Math.random() * 100000 + 10000);
+        const secondNum = Math.floor(Math.random() * (firstNum - 10000) + 10000);
+        return `S$${secondNum.toLocaleString()} - S$${firstNum.toLocaleString()}`;
+      }
+      
 
 
     return(
@@ -45,9 +50,10 @@ export default function Jobs(props){
                         &nbsp;Singapore
                         </span>
                     </div>  
-                    <div>
-                        <p className="jobSalary">
-                            S$4,633 - S$7,166 / mth &nbsp;
+                    <div className={ props.availSalary ? "" : "noDisplay"}>
+                        <p className={`jobSalary`}>
+                            
+                            {generateSalaryRange()} / mth &nbsp;
                         
                             <TechStackPill tech="EST" isBlack={true}/>
 
