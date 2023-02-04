@@ -3,9 +3,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import TechStackPill from "./TechStackPill";
 
-export default function Jobs(){
+export default function Jobs(props){
+
+
+
+
     return(
-        <div className="jobEntry">
+        <div className={`jobEntry ${props.currSelected === props.id ? "jobEntryClicked": ""}`}  onClick={()=>{
+            props.handleClick(props.id)
+        }} id={props.id}>
             <div className="jobMainInfo">
                 <div className="jobTitle">
                     <div>
@@ -13,16 +19,16 @@ export default function Jobs(){
                     </div>
                     <div className="jobCompany">
                         <p style={{margin: "0px"}}>
-                            <span>Visa</span>
+                            <span>{props.company}</span>
                             <span>  &nbsp; 4&nbsp;★</span>
                         </p>
                         <h2 style={{fontSize: "16px", marginTop: "4px"}}>
-                            CyberSecurity Analyst
+                            {props.position}
                         </h2>
                     </div>
                     <div className="jobSpecializationContainer">
                         <div className="jobSpecialization">
-                            CyberSec Ops
+                            {props.specialization}
                         </div>
                     </div>
                     
