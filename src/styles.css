@@ -182,6 +182,8 @@
 
 /* Jobs Display */
 
+
+
 .jobsDisplay{
     /* background-color: #DDF7E9; */
     width: 100%;
@@ -205,6 +207,20 @@
     background-color: beige;
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 1009px) {
+    
+    .jobsDisplay {
+      flex-direction: column; /* change the flex-direction to column */
+    }
+    .jobsListings {
+      width: 100%; /* make the width 100% of the container */
+    }
+    .jobsDescription {
+      display: none; /* hide the jobsDescription */
+    }
+  }
+  
 
 .jobEntry{
     display: flex; 
@@ -326,6 +342,7 @@
     position: relative;
     /* If overflow, should convert to ... instead */
     white-space: nowrap;
+    text-align: start;
 }
 
 

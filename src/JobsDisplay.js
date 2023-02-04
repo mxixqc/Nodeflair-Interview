@@ -35,9 +35,9 @@ export default function JobsDisplay(){
         console.log(e)
     }, [])
 
-    function getRandomBoolean() {
-        return Math.random() >= 0.5;
-      }
+    // function getRandomBoolean() {
+    //     return Math.random() >= 0.5;
+    //   }
             
 
     return(
@@ -56,7 +56,7 @@ export default function JobsDisplay(){
                             id={index}
                             currSelected={selectedCompany}
                             handleClick={(index)=>handleClick(index)}
-                            availSalary={getRandomBoolean()}
+                            // availSalary={()=>getRandomBoolean()}
                             />
                 )
             })}
